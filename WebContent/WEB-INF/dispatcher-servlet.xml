@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<import resource="spring-beans.xml" />
+
+	<mvc:annotation-driven />
+	<mvc:default-servlet-handler />
+
+	<!-- context:annotation-config / -->
+	<!-- <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
+		<property name="prefix" value="views/" /> <property name="suffix" value=".jsp" 
+		/> </bean> -->
+	<!-- bean id="jsrvalidator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/ -->
+
+	<!-- bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver"> 
+		<property name="order" value="2" /> <property name="mediaTypes"> <map> <entry 
+		key="json" value="application/json" /> </map> </property> <property name="defaultViews"> 
+		<list> < ! - - NEXT bean requires jackson-mapper-asl-1.9.7.jar and jackson-core-asl-1.7.0.jar 
+		in web-inf/lib - - > <bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView"> 
+		<property name="prefixJson" value="true" /> </bean> </list> </property> <property 
+		name="ignoreAcceptHeader" value="true" /> </bean -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="order" value="1" />
+		<property name="prefix" value="views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+
+</beans>
