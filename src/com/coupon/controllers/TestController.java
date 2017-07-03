@@ -17,9 +17,8 @@ import com.coupon.entities.Customer;
 public class TestController {
 
 	@Autowired
-	SessionFactory sessionFactory;
-
-	Session session;
+	private SessionFactory sessionFactory;
+	private Session session;
 
 	@RequestMapping(value = "/helloCustomer/{name}/{password}/{email}")
 	@ResponseBody
